@@ -1,0 +1,68 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "Iniciar Sesion",
+        "title": "POST Iniciar Sesion",
+        "contact": {
+            "name": "Edwin Lopez",
+            "email": "edwinlg17@gmail.com"
+        }
+    },
+    "schema": ["http"],
+    "host": "localhost:3001/auth",
+    "basePath": "/",
+    "paths": {
+        "/iniciarSesion": {
+            "name": "nombre ejemplo",
+            "post": {
+                "summary": "post iniciar sesion",
+                "descrition": "api inicio de sesion",
+                "produces": ["application/json"],
+                "consumes": ["application/json"],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "esquema iniciar sesion",
+                        "description": "esquema de valores",
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/parametros"
+                        },
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "inicio de sesion correcto",
+                        "schema": {
+                            "type": "string",
+                            "example": "CREATED"
+                        }
+                    },
+                    "400": {
+                        "description": "inicio de sesion incorrecto",
+                        "schema": {
+                            "type": "string",
+                            "example": "BAD REQUEST"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "parametros": {
+            "type": "object",
+            "properties": {
+                "usuario": {
+                    "type": "string",
+                    "example": "user"
+                },
+                "contrasenia": {
+                    "type": "string",
+                    "example": "pass"
+                }
+            }
+        }
+    }
+}
