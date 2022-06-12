@@ -1,28 +1,28 @@
 {
     "swagger": "2.0",
     "info": {
-        "description": "Iniciar Sesion",
-        "title": "POST Iniciar Sesion",
+        "description": "Registrar Usuario",
+        "title": "POST Registrar Usuario",
         "contact": {
             "name": "Edwin Lopez",
             "email": "edwinlg17@gmail.com"
         }
     },
     "schema": ["http"],
-    "host": "localhost:3000/auth",
+    "host": "localhost:4000/auth",
     "basePath": "/",
     "paths": {
-        "/iniciarSesion": {
-            "name": "nombre ejemplo",
+        "/registrarUsuario": {
+            "name": "EndPoint Registrar Usuario",
             "post": {
-                "summary": "post iniciar sesion",
-                "descrition": "api inicio de sesion",
+                "summary": "post registrar usuario",
+                "descrition": "api registrar usuario",
                 "produces": ["application/json"],
                 "consumes": ["application/json"],
                 "parameters": [
                     {
                         "in": "body",
-                        "name": "esquema iniciar sesion",
+                        "name": "esquema registrar usuario",
                         "description": "esquema de valores",
                         "schema": {
                             "type": "object",
@@ -33,14 +33,14 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "inicio de sesion correcto",
+                        "description": "registrar usuario correcto",
                         "schema": {
                             "type": "string",
                             "example": "CREATED"
                         }
                     },
                     "400": {
-                        "description": "inicio de sesion incorrecto",
+                        "description": "registrar usuario incorrecto",
                         "schema": {
                             "type": "string",
                             "example": "BAD REQUEST"
@@ -54,13 +54,9 @@
         "parametros": {
             "type": "object",
             "properties": {
-                "usuario": {
+                "valor": {
                     "type": "string",
                     "example": "user"
-                },
-                "contrasenia": {
-                    "type": "string",
-                    "example": "pass"
                 }
             }
         }
