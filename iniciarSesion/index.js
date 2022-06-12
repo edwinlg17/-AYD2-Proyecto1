@@ -7,7 +7,7 @@ const path = require('path');
 
 require('./logger/logger');
 require('dotenv').config({
-    path: path.resolve(path.dirname(__dirname), process.env.NODE_ENV + '.env'),
+    path: path.resolve(process.cwd(), process.env.NODE_ENV + '.env'),
 });
 
 const iniciarSesionController = require('./controller/IniciarSesion');
