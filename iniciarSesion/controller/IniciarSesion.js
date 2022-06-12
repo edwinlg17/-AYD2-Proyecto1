@@ -1,5 +1,7 @@
 const router = require('express').Router();
 const validator = require('../middleware/validator');
+// const jwt = require('jsonwebtoken');
+// const bcrypt = require('bcryptjs');
 
 router.post('/iniciarSesion', [validator], (req, res) => {
     const { usuario, contrasenia } = req.body;
