@@ -6,7 +6,7 @@
     "scripts": {
         "start": "export NODE_ENV=prod&& node index.js",
         "dev": "export NODE_ENV=dev&& nodemon index.js",
-        "test": "set NODE_OPTIONS=--experimental-vm-modules && jest",
+        "test": "jest --runInBand",
         "prepare-husky": "cd .. && husky install iniciarSesion/.husky",
         "format:check": "prettier --check .",
         "format:write": "prettier --write .",
@@ -17,6 +17,7 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
+        "aes-encryption": "^1.0.4",
         "bcrypt": "^5.0.1",
         "cors": "^2.8.5",
         "dotenv": "^16.0.1",
@@ -46,9 +47,25 @@
         "supertest": "^6.2.3"
     },
     "jest": {
+        "verbose": true,
+        "rootDir": "./",
+        "coverageThreshold": {
+            "global": {
+                "branches": 90,
+                "functions": 90,
+                "lines": 90,
+                "statements": 90
+            }
+        },
+        "testTimeout": 10000,
+        "moduleDirectories": [
+            "node_modules"
+        ],
         "collectCoverage": true,
-        "coverageReporters": [
-            "html"
+        "collectCoverageFrom": [
+            "**/*.{js,jsx}",
+            "!**/node_modules/**",
+            "!**/vendor/**"
         ]
     }
 }

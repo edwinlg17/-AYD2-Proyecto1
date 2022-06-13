@@ -23,10 +23,12 @@ Cliente.init(
         usuario: {
             type: DataTypes.STRING,
             allowNull: false,
+            unique: true,
         },
         correo: {
             type: DataTypes.STRING,
             allowNull: false,
+            unique: true,
             validate: {
                 isEmail: true,
             },
