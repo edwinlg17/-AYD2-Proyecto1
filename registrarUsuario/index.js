@@ -23,7 +23,7 @@ const createApp = () => {
 };
 
 const app = createApp();
-const PORT = process.env.PORT || 4001;
+const PORT = process.env.PORT || 4000;
 relaciones();
 app.listen(PORT, () => {
     global.log.info(`API ejecutandose en el puerto ${PORT}`);

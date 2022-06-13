@@ -10,7 +10,7 @@ require('dotenv').config({
     path: path.resolve(process.cwd(), process.env.NODE_ENV + '.env'),
 });
 
-const iniciarSesionController = require('./controller/IniciarSesion');
+const iniciarSesionController = require('./routes/iniciarSesion');
 
 /*------------Middleware------------*/
 const createApp = () => {
@@ -23,7 +23,7 @@ const createApp = () => {
 };
 
 const app = createApp();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
 relaciones();
 app.listen(PORT, () => {
     global.log.info(`API ejecutandose en el puerto ${PORT}`);
