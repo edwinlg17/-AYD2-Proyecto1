@@ -10,7 +10,7 @@ require('dotenv').config({
     path: path.resolve(process.cwd(), process.env.NODE_ENV + '.env'),
 });
 
-const registrarUsuarioController = require('./controller/RegistrarUsuario');
+const registrarUsuarioController = require('./routes/registrarUsuario');
 
 /*------------Middleware------------*/
 const createApp = () => {

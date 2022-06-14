@@ -54,9 +54,25 @@
         "parametros": {
             "type": "object",
             "properties": {
-                "valor": {
+                "cui": {
+                    "type": "int",
+                    "example": "00000000"
+                },
+                "nombre": {
+                    "type": "string",
+                    "example": "Usuario"
+                },
+                "usuario": {
                     "type": "string",
                     "example": "user"
+                },
+                "correo": {
+                    "type": "string",
+                    "example": "user@user.com"
+                },
+                "contrasenia": {
+                    "type": "string",
+                    "example": "user1234"
                 }
             }
         }
