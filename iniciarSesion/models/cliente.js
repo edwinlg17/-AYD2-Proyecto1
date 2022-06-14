@@ -6,11 +6,10 @@ class Cliente extends Model {}
 Cliente.init(
     {
         cui: {
-            type: DataTypes.BIGINT,
+            type: DataTypes.STRING,
             primaryKey: true,
             validate: {
-                min: 13,
-                max: 13,
+                len: 13,
             },
         },
         nombre: {

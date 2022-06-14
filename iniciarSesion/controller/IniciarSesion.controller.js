@@ -12,7 +12,7 @@ const iniciarSesion = async (req, res) => {
 
     const sendInvalidCredentials = (mensaje) =>
         res.status(400).send({ errors: [{ msg: mensaje }] });
-    if (!usuario && !contrasenia) {
+    if (!usuario || !contrasenia) {
         return sendInvalidCredentials('Credenciales invalidas');
     }
 
