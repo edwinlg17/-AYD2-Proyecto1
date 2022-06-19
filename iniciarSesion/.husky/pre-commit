@@ -1,0 +1,26 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+#!/bin/sh
+
+branch="$(git rev-parse --abbrev-ref HEAD)"
+
+if [ "$branch" = "master" ]; then
+    echo "No es posible crear un commit en la rama master..."
+    exit 1
+fi
+
+if [ "$branch" = "develop" ]; then
+    echo "No es posible crear un commit en la rama develop..."
+    exit 1
+fi
+
+cd iniciarSesion
+npm run format:check
+npm run lint:check
+# npm run test
+cd ..
+cd registrarUsuario
+npm run format:check
+npm run lint:check
+# npm run test

@@ -1,0 +1,80 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "Registrar Usuario",
+        "title": "POST Registrar Usuario",
+        "contact": {
+            "name": "Edwin Lopez",
+            "email": "edwinlg17@gmail.com"
+        }
+    },
+    "schema": ["http"],
+    "host": "localhost:5000/auth",
+    "basePath": "/",
+    "paths": {
+        "/registrarUsuario": {
+            "name": "EndPoint Registrar Usuario",
+            "post": {
+                "summary": "post registrar usuario",
+                "descrition": "api registrar usuario",
+                "produces": ["application/json"],
+                "consumes": ["application/json"],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "esquema registrar usuario",
+                        "description": "esquema de valores",
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/parametros"
+                        },
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "registrar usuario correcto",
+                        "schema": {
+                            "type": "string",
+                            "example": "CREATED"
+                        }
+                    },
+                    "400": {
+                        "description": "registrar usuario incorrecto",
+                        "schema": {
+                            "type": "string",
+                            "example": "BAD REQUEST"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "parametros": {
+            "type": "object",
+            "properties": {
+                "cui": {
+                    "type": "int",
+                    "example": "00000000"
+                },
+                "nombre": {
+                    "type": "string",
+                    "example": "Usuario"
+                },
+                "usuario": {
+                    "type": "string",
+                    "example": "user"
+                },
+                "correo": {
+                    "type": "string",
+                    "example": "user@user.com"
+                },
+                "contrasenia": {
+                    "type": "string",
+                    "example": "user1234"
+                }
+            }
+        }
+    }
+}

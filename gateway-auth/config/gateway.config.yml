@@ -1,0 +1,49 @@
+http:
+  port: 4000
+admin:
+  port: 9876
+  host: localhost
+apiEndpoints:
+  iniciarSesion: 
+    host: 'localhost'
+    paths: ['/auth/s1', '/auth/s1/*']
+    methods: ['POST', 'GET']
+  registrarUsuario: 
+    host: 'localhost'
+    paths: ['/auth/s2', '/auth/s2/*']
+    methods: ['POST', 'GET']
+serviceEndpoints:
+  iniciarSesionService: 
+    url: 'http://localhost:3000/auth'
+    # url: 'http://iniciarSesion:4001/auth'
+  registrarUsuarioService:
+    url: 'http://localhost:5000/auth'
+    #url: 'http://registrarUsuario:4002/auth'
+policies:
+  - basic-auth
+  - cors
+  - expression
+  - key-auth
+  - log
+  - oauth2
+  - proxy
+  - rate-limit
+pipelines:
+  iniciarSesionPipeline:
+    apiEndpoints:
+      - iniciarSesion
+    policies:
+      - proxy:
+        - action:
+            serviceEndpoint: iniciarSesionService
+            changeOrigin: true
+            stripPath: true
+  registrarUsuarioPipeline:
+    apiEndpoints:
+      - registrarUsuario
+    policies:
+      - proxy:
+        - action:
+            serviceEndpoint: registrarUsuarioService
+            changeOrigin: true
+            stripPath: true
