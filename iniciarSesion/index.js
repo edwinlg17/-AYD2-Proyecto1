@@ -17,7 +17,7 @@ const createApp = () => {
     const app = express();
     middleware(app);
     app.use('/auth', iniciarSesionController);
-    app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+    app.use('/auth/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
     return app;
 };

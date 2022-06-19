@@ -1,7 +1,7 @@
 const sequelize = require('../dataBase/connection');
 const path = require('path');
 const AesEncryption = require('aes-encryption');
-const DbRepo = require('../dataBase/index'); // ../dataBase/index
+const DbRepo = require('../dataBase/index');
 
 require('dotenv').config({
     path: path.resolve(process.cwd(), process.env.NODE_ENV + '.env'),

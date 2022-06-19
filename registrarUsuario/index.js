@@ -17,13 +17,13 @@ const createApp = () => {
     const app = express();
     middleware(app);
     app.use('/auth', registrarUsuarioController);
-    app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+    app.use('/auth/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
     return app;
 };
 
 const app = createApp();
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 5000;
 relaciones();
 app.listen(PORT, () => {
     global.log.info(`API ejecutandose en el puerto ${PORT}`);

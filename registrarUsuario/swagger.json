@@ -9,7 +9,7 @@
         }
     },
     "schema": ["http"],
-    "host": "localhost:4000/auth",
+    "host": "localhost:5000/auth",
     "basePath": "/",
     "paths": {
         "/registrarUsuario": {

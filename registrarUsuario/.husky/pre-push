@@ -6,9 +6,9 @@
 cd iniciarSesion
 npm run format:check
 npm run lint:check
-#npm run test
+npm run test
 cd ..
 cd registrarUsuario
 npm run format:check
 npm run lint:check
-#npm run test
+# npm run test
